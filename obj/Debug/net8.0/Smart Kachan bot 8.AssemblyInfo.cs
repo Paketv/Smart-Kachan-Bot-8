@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Smart Kachan bot 8")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb2229c1b1c00aeb749fa3b288ce3139bb8aa69b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Smart Kachan bot 8")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Smart Kachan bot 8")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
