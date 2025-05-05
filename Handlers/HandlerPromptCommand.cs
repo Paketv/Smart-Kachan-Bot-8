@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System;
-using System.Threading.Tasks;
-using Telegram.Bot;
+﻿using Telegram.Bot;
 using Telegram.Bot.Types.Enums;
-using System.Threading;
-using System.Data.SQLite;
-using System.Collections.Generic;
 using Telegram.Bot.Types;
-using System.Linq;
 
 namespace Smart_Kachan_bot_8
 {
@@ -29,7 +18,7 @@ namespace Smart_Kachan_bot_8
 
             if (update.Message?.Text != null)
             {
-                var chatThemeId = update.Message.MessageThreadId;
+                
                 var messageId = update.Message.MessageId;
                 var userId = update!.Message!.From!.Id!;
                 var chatId = update.Message.Chat.Id;
@@ -47,8 +36,7 @@ namespace Smart_Kachan_bot_8
                         await botClient.SendMessage(
                             chatId: chatId,
                             text: "Создание промпта отменено",
-                            cancellationToken: ct, 
-                            messageThreadId: chatThemeId);
+                            cancellationToken: ct);
                         Console.WriteLine($"{userName}({userId}) Отменил создание промпта'");
                     }
                     return;
@@ -60,8 +48,7 @@ namespace Smart_Kachan_bot_8
                     {
                         return;
                     }
-                    if (textMessage.StartsWith("/addprompt"))
-                    {
+                  
                         if (string.IsNullOrEmpty(state.PromptName))
                         {
 
@@ -69,8 +56,7 @@ namespace Smart_Kachan_bot_8
                             await botClient.SendMessage(
                                 chatId: chatId,
                                 text: "Теперь введи Промпт:",
-                                cancellationToken: ct, 
-                                messageThreadId: chatThemeId);
+                                cancellationToken: ct);
                             return;
                         }
                         else
@@ -79,18 +65,17 @@ namespace Smart_Kachan_bot_8
                             await botClient.SendMessage(
                                 chatId: chatId,
                                 text: $"Промпт '{state.PromptName}' успешно сохранён ✔️",
-                                cancellationToken: ct, 
-                                messageThreadId: chatThemeId);
+                                cancellationToken: ct);
                             Console.WriteLine($"{userName} ({userId}) закончил создание промпта'");
                             userStates.Remove(userId);
 
                             return;
                         }
-                    }
+                    
                 }
 
                 else if (textMessage.StartsWith("/addprompt"))
-                {
+                { 
                     userStates[userId] = new UserState
                     {
                         CurrentCommand = "/addprompt",
@@ -101,8 +86,7 @@ namespace Smart_Kachan_bot_8
                     await botClient.SendMessage(
                         chatId: chatId,
                         text: "Введи название для нового промпта:",
-                        cancellationToken: ct, 
-                        messageThreadId: chatThemeId);
+                        cancellationToken: ct);
                     return;
                 }
 
@@ -127,8 +111,7 @@ namespace Smart_Kachan_bot_8
                             text: deleted
                                 ? $"Промпт '{promptName}' успешно удалён!"
                                 : $"Промпт '{promptName}' не найден или нет прав на удаление",
-                            cancellationToken: ct, 
-                            messageThreadId: chatThemeId);
+                            cancellationToken: ct);
 
                         Console.WriteLine(deleted ? $"{userName}({userId})успешно удалил '{promptName}'" : $"Промпт '{promptName}' не найден или нет прав на удаление у {userName}({userId})");
                     }
@@ -137,8 +120,7 @@ namespace Smart_Kachan_bot_8
                         await botClient.SendMessage(
                             chatId: chatId,
                             text: "У вас нет прав на удаление промптов",
-                            cancellationToken: ct, 
-                            messageThreadId: chatThemeId);
+                            cancellationToken: ct);
                     }
                 }
             }

@@ -7,7 +7,7 @@ namespace Smart_Kachan_bot_8
 {
   internal class Program
     {
-        private static ITelegramBotClient botClient = new TelegramBotClient("7665380627:AAGNkosIKwHZbBZMafhqL64N2hL66av1Uvk");
+        private static ITelegramBotClient botClient = new TelegramBotClient("BOT_API_TOKEN");
         public static string dbPath = "DataBasePrompt.sqlite";
 
         static void Main(string[] args)

@@ -7,7 +7,7 @@ namespace Smart_Kachan_bot_8
         public static bool IsAdmin(long userId)
         {
 
-            long[] adminIds = {  };//Ваши Айди пользователей которым разрешаете использовать команду 
+            long[] adminIds = {};//Ваши Айди пользователей которым разрешаете использовать команду 
             return adminIds.Contains(userId);
         }
 
