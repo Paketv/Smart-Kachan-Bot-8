@@ -50,6 +50,7 @@ namespace Smart_Kachan_bot_8
                         return;
                     await CHandlerSendRequest.HandlerSendRequest(botClient, update, ct);
                     await CHandlerPromptCommand.HandlerPromptCommand(botClient, update, ct);
+                    await CHandlerInitialCommands.HandlerInitialCommand(botClient, update, ct);
 
                 },
                 errorHandler: async (bot, ex, ct) => await HandleError(bot, ex, ct)
