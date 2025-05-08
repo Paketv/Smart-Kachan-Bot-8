@@ -1,5 +1,6 @@
 # Smart Kachan 8
 **Умнов качан** — Это бот-кот с ИИ. Имеет такие функции как отправка запросов через команды с разными промптами, так и функцию позволяющую сделать свою команду которая отправит запрос с твоим промптом
+
 Попробовать бота - https://t.me/Smart_Kachan_Bot
 ## Требования 
 _________________
@@ -21,8 +22,8 @@ git clone https://github.com/Paketv/Smart-Kachan-bot-8
 dotnet publish -c Release -o ./publish
 dotnet 'Smart Kachan bot 8.dll'
 ```
-__________________
 ## Использованые ресурсы:
+___________________
 [OnlySq API](https://docs.onlysq.ru/)
 
 Хост предоставленный брадком: [Komaru Dude](https://t.me/komaru_dude)
