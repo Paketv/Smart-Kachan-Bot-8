@@ -15,13 +15,16 @@ _________________
 git clone https://github.com/Paketv/Smart-Kachan-bot-8
 ```
 #### 2. Запуск
-сd Smart-Kachan-bot-8
 ```bash
+сd Smart-Kachan-bot-8
 dotnet publish -c Release -o ./publish
 dotnet 'Smart Kachan bot 8.dll'
 ```
 __________________
 ## Использованые ресурсы:
 [OnlySq API](https://docs.onlysq.ru/)
+
 Хост предоставленный брадком: [Komaru Dude](https://t.me/komaru_dude)
+
 Мои мозги
+
